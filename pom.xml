@@ -81,6 +81,13 @@
             <scope>runtime</scope>
         </dependency>
 
+        <!-- External Tomcat -->
+  <dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-tomcat</artifactId>
+    <scope>provided</scope>
+  </dependency>
+
         <!-- For running tests -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
