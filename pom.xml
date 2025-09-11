@@ -11,6 +11,7 @@
     <groupId>my_portfolio</groupId>
     <artifactId>backend</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+        <packaging>war</packaging>
     <name>my_portfolio_backend</name>
     <description>Backend for Portfolio</description>
     <properties>
