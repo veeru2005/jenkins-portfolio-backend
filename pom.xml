@@ -12,13 +12,13 @@
         <relativePath/>
     </parent>
 
+   <!-- ... other properties ... -->
     <groupId>my_portfolio</groupId>
     <artifactId>backend</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-<<<<<<< HEAD
-        <packaging>war</packaging>
-=======
     <packaging>war</packaging>
+    <name>my_portfolio_backend</name>
+<!-- ... rest of the file ... -->
 
 >>>>>>> 5153671 (updated)
     <name>my_portfolio_backend</name>
