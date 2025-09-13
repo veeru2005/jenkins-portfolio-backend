@@ -17,9 +17,10 @@ public class PortfolioService {
     private final ContactMessageRepository contactMessageRepository;
     private final ProjectRepository projectRepository;
     private final CertificationRepository certificationRepository;
+    // The email service is no longer needed for this method, but other methods might use it.
+    // We will leave it for now but remove its use from saveContactMessage.
     private final Emai_Otp_Service emailService;
 
-    // --- Using Constructor Injection (Best Practice) ---
     @Autowired
     public PortfolioService(ContactMessageRepository contactMessageRepository, ProjectRepository projectRepository, CertificationRepository certificationRepository, Emai_Otp_Service emailService) {
         this.contactMessageRepository = contactMessageRepository;
@@ -30,10 +31,16 @@ public class PortfolioService {
 
     // --- Contact Messages ---
     public void saveContactMessage(ContactMessage message) {
+        // Step 1: Save the message (This is correct)
         contactMessageRepository.save(message);
+
+        // Step 2: DELETE THE FOLLOWING LINES.
+        // Your ContactController already sends the better-looking email.
+        /*
         String notification = String.format("New message from: %s (%s)\n\nSubject: %s\n\nMessage:\n%s",
-            message.getName(), message.getEmail(), message.getSubject(), message.getMessage());
+                message.getName(), message.getEmail(), message.getSubject(), message.getMessage());
         emailService.sendEmail("sunkavalli.veerendra1973@gmail.com", "New Portfolio Contact Message", notification);
+        */
     }
 
     // --- Projects ---

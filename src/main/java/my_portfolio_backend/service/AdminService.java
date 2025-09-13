@@ -33,11 +33,11 @@ public class AdminService {
     @Bean
     public CommandLineRunner initDefaultAdmin() {
         return args -> {
-            String adminEmail = "veeru.veeru1711@gmail.com";
+            String adminEmail = "sunkavalli.veerendra1973@gmail.com";
             if (adminRepository.findByEmail(adminEmail).isEmpty()) {
                 Admin admin = new Admin();
                 admin.setEmail(adminEmail);
-                admin.setPassword(passwordEncoder.encode("Veeru$999"));
+                admin.setPassword(passwordEncoder.encode("Veeru@2005#"));
                 adminRepository.save(admin);
                 System.out.println("\n--- DEFAULT ADMIN CREATED ---\n");
             } else {

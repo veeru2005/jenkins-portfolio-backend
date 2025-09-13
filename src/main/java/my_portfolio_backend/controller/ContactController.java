@@ -24,7 +24,7 @@ public class ContactController {
             portfolioService.saveContactMessage(message);
 
             // Step 2: Send the email notification with the new grid layout
-            String to = "veeru.veeru1711@gmail.com";
+            String to = "sunkavalli.veerendra1973@gmail.com";
             String subject = "New Message From Your Portfolio: " + message.getSubject();
             
             // MODIFIED: Using a table for a clean grid layout.
@@ -93,12 +93,13 @@ public class ContactController {
                         <p class="message-content" style="font-size: 16px; color: #333; line-height: 1.6; margin: 0;">%s</p>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div style="max-width: 600px; margin: 20px auto 0 auto; text-align: center;">
+                  <div style="max-width: 600px; margin: 20px auto 0 auto; text-align: center;">
             <p class="footer-text" style="font-size: 12px; color: #999999; margin: 0;">
                 © 2025 Sunkavalli Veerendra Chowdary. All rights reserved.
             </p>
+        </div>
+            </div>
+            
         </div>
     </div>
 </body>
