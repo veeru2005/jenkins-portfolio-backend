@@ -1,6 +1,6 @@
 package my_portfolio_backend.entity;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 
 @Entity
 public class Certification {

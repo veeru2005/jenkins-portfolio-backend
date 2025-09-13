@@ -1,7 +1,7 @@
 package my_portfolio_backend.service;
 
-import jakarta.mail.MessagingException;
-import jakarta.mail.internet.MimeMessage;
+import javax.mail.MessagingException;
+import javax.mail.internet.MimeMessage;
 
 import java.util.Random;
 

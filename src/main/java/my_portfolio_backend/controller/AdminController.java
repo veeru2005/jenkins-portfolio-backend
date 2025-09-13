@@ -40,7 +40,6 @@ public class AdminController {
         return ResponseEntity.status(401).body(Map.of("message", "Invalid credentials"));
     }
 
-    // --- THIS METHOD IS NOW CORRECTED ---
     @PostMapping("/verify-otp")
     public ResponseEntity<?> verifyOtp(@RequestBody OtpVerificationRequest req) {
         // Call the service, which returns the token string on success or null on failure

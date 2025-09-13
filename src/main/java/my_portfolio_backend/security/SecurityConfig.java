@@ -14,6 +14,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+import my_portfolio_backend.security.JwtRequestFilter;
 
 import java.util.Arrays;
 
@@ -27,16 +28,17 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.cors(cors -> cors.configurationSource(corsConfigurationSource()))
-            .csrf(csrf -> csrf.disable())
-            .authorizeHttpRequests(auth -> auth
-                .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
-                .requestMatchers("/api/admin/login", "/api/admin/verify-otp").permitAll()
-                .requestMatchers(HttpMethod.GET, "/api/portfolio/projects", "/api/portfolio/certifications").permitAll()
-                .requestMatchers("/api/contact/send").permitAll()
-                .requestMatchers("/api/portfolio/admin/**").permitAll()
-                .anyRequest().authenticated()
-            )
-            .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
+                .csrf(csrf -> csrf.disable())
+                // Use authorizeRequests() and antMatchers() for Spring Boot 2.7
+                .authorizeRequests(auth -> auth
+                        .antMatchers(HttpMethod.OPTIONS, "/**").permitAll()
+                        .antMatchers("/api/admin/login", "/api/admin/verify-otp").permitAll()
+                        .antMatchers(HttpMethod.GET, "/api/portfolio/projects", "/api/portfolio/certifications").permitAll()
+                        .antMatchers("/api/contact/send").permitAll()
+                        .antMatchers("/api/portfolio/admin/**").permitAll()
+                        .anyRequest().authenticated()
+                )
+                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
 
         http.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
         return http.build();
