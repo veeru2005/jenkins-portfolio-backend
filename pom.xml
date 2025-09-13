@@ -12,15 +12,10 @@
         <relativePath/>
     </parent>
 
-   <!-- ... other properties ... -->
     <groupId>my_portfolio</groupId>
     <artifactId>backend</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>war</packaging>
-    <name>my_portfolio_backend</name>
-<!-- ... rest of the file ... -->
-
->>>>>>> 5153671 (updated)
     <name>my_portfolio_backend</name>
     <description>Backend for Portfolio</description>
 
@@ -107,7 +102,7 @@
             <scope>runtime</scope>
         </dependency>
 
-<<<<<<< HEAD
+
         <!-- External Tomcat -->
   <dependency>
     <groupId>org.springframework.boot</groupId>
@@ -116,9 +111,8 @@
   </dependency>
 
         <!-- For running tests -->
-=======
+
         <!-- Tests -->
->>>>>>> 5153671 (updated)
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
